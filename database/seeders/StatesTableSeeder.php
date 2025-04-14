@@ -7,18 +7,23 @@ use Illuminate\Support\Facades\DB;
 
 class StatesTableSeeder extends Seeder
 {
-
     public function run()
     {
         DB::table('states')->delete();
 
-        $states = [
-            'Abia', 'Adamawa', 'Akwa Ibom', 'Anambra', 'Bauchi', 'Bayelsa', 'Benue', 'Borno', 'Cross River', 'Delta', 'Ebonyi', 'Edo', 'Ekiti', 'Enugu', 'FCT', 'Gombe', 'Imo', 'Jigawa','Kaduna', 'Kano', 'Katsina', 'Kebbi', 'Kogi', 'Kwara', 'Lagos', 'Nasarawa', 'Niger', 'Ogun', 'Ondo', 'Osun', 'Oyo', 'Plateau', 'Rivers', 'Sokoto', 'Taraba', 'Yobe', 'Zamfara',
+        $counties = [
+            'Mombasa', 'Kwale', 'Kilifi', 'Tana River', 'Lamu', 'Taita-Taveta', 
+            'Garissa', 'Wajir', 'Mandera', 'Marsabit', 'Isiolo', 'Meru', 
+            'Tharaka-Nithi', 'Embu', 'Kitui', 'Machakos', 'Makueni', 'Nyandarua', 
+            'Nyeri', 'Kirinyaga', 'Murang\'a', 'Kiambu', 'Turkana', 'West Pokot', 
+            'Samburu', 'Trans-Nzoia', 'Uasin Gishu', 'Elgeyo-Marakwet', 'Nandi', 
+            'Baringo', 'Laikipia', 'Nakuru', 'Narok', 'Kajiado', 'Kericho', 
+            'Bomet', 'Kakamega', 'Vihiga', 'Bungoma', 'Busia', 'Siaya', 
+            'Kisumu', 'Homa Bay', 'Migori', 'Kisii', 'Nyamira', 'Nairobi'
         ];
 
-        foreach ($states as $state) {
-            State::create(['name' => $state]);
+        foreach ($counties as $county) {
+            State::create(['name' => $county]);
         }
     }
-
 }

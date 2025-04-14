@@ -13,20 +13,20 @@ class CreatePaymentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('payments', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('title', 100);
-            $table->integer('amount');
-            $table->string('ref_no', 100)->unique();
-            $table->string('method', 100)->default('cash');
-            $table->unsignedInteger('my_class_id')->nullable();
-            $table->string('description')->nullable();
-            $table->string('year');
-            $table->timestamps();
-        });
-
+        if (!Schema::hasTable('payments')) {
+            Schema::create('payments', function (Blueprint $table) {
+                $table->id();
+                $table->string('title');
+                $table->decimal('amount', 10, 2);
+                $table->string('method')->default('mpesa');
+                $table->text('description')->nullable();
+                $table->string('status')->default('active');
+                $table->unsignedBigInteger('my_class_id')->nullable();
+                $table->timestamps();
+            });
+        }
     }
-
+    
     /**
      * Reverse the migrations.
      *

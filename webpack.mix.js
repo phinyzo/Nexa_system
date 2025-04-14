@@ -11,5 +11,13 @@ const mix = require('laravel-mix');
  |
  */
 
+ const glob = require('glob');
+
+ mix.styles(
+     glob.sync('resources/assets/css/*.css'),
+     'public/css/vendor.css'
+ );
+ 
+
 mix.js('resources/js/app.js', 'public/js')
    .sass('resources/sass/app.scss', 'public/css');

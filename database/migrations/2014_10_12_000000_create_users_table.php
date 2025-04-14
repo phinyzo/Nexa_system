@@ -29,7 +29,7 @@ class CreateUsersTable extends Migration
             $table->unsignedInteger('bg_id')->nullable();
             $table->unsignedInteger('state_id')->nullable();
             $table->unsignedInteger('lga_id')->nullable();
-            $table->unsignedInteger('nal_id')->nullable();
+            $table->unsignedBigInteger('nal_id')->nullable();
             $table->string('address')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

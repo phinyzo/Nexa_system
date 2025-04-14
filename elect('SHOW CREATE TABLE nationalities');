@@ -1,0 +1,41 @@
+[90m= [39m[
+    {#6084
+      +"[1mTable[22m": "[32musers[39m",
+      +"[1mCreate Table[22m": """
+        [32mCREATE TABLE `users` ([39m\n
+        [32m  `id` int unsigned NOT NULL AUTO_INCREMENT,[39m\n
+        [32m  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,[39m\n
+        [32m  `email` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,[39m\n
+        [32m  `code` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,[39m\n
+        [32m  `username` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,[39m\n
+        [32m  `user_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,[39m\n
+        [32m  `dob` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,[39m\n
+        [32m  `gender` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,[39m\n
+        [32m  `photo` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'http://localhost/global_assets/images/user.png',[39m\n
+        [32m  `phone` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,[39m\n
+        [32m  `phone2` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,[39m\n
+        [32m  `bg_id` int unsigned DEFAULT NULL,[39m\n
+        [32m  `state_id` int unsigned DEFAULT NULL,[39m\n
+        [32m  `lga_id` int unsigned DEFAULT NULL,[39m\n
+        [32m  `nal_id` int unsigned DEFAULT NULL,[39m\n
+        [32m  `address` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,[39m\n
+        [32m  `email_verified_at` timestamp NULL DEFAULT NULL,[39m\n
+        [32m  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,[39m\n
+        [32m  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,[39m\n
+        [32m  `created_at` timestamp NULL DEFAULT NULL,[39m\n
+        [32m  `updated_at` timestamp NULL DEFAULT NULL,[39m\n
+        [32m  PRIMARY KEY (`id`),[39m\n
+        [32m  UNIQUE KEY `users_code_unique` (`code`),[39m\n
+        [32m  UNIQUE KEY `users_email_unique` (`email`),[39m\n
+        [32m  UNIQUE KEY `users_username_unique` (`username`),[39m\n
+        [32m  KEY `users_state_id_foreign` (`state_id`),[39m\n
+        [32m  KEY `users_lga_id_foreign` (`lga_id`),[39m\n
+        [32m  KEY `users_bg_id_foreign` (`bg_id`),[39m\n
+        [32m  CONSTRAINT `users_bg_id_foreign` FOREIGN KEY (`bg_id`) REFERENCES `blood_groups` (`id`) ON DELETE SET NULL,[39m\n
+        [32m  CONSTRAINT `users_lga_id_foreign` FOREIGN KEY (`lga_id`) REFERENCES `lgas` (`id`) ON DELETE SET NULL,[39m\n
+        [32m  CONSTRAINT `users_state_id_foreign` FOREIGN KEY (`state_id`) REFERENCES `states` (`id`) ON DELETE SET NULL[39m\n
+        [32m) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci[39m
+        """,
+    },
+  ]
+

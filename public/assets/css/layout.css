@@ -183,7 +183,12 @@ body {
   border-bottom: 1px solid #ddd; }
   .page-header-light.has-cover {
     background: url(../../../../../../global_assets/images/backgrounds/seamless.png); }
-
+    .bg-primary {
+      background-color: #1a237e !important;
+  }
+  .text-white {
+      color: white !important;
+  }
 .page-header-dark {
   background-color: #273246;
   color: #fff;

@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\SupportTeam;
-
+use App\Models\Lga;
 use App\Helpers\Qs;
 use App\Helpers\Mk;
 use App\Http\Requests\Student\StudentRecordCreate;
@@ -44,8 +44,9 @@ class StudentRecordController extends Controller
         $data['my_classes'] = $this->my_class->all();
         $data['parents'] = $this->user->getUserByType('parent');
         $data['dorms'] = $this->student->getAllDorms();
-        $data['states'] = $this->loc->getStates();
-        $data['nationals'] = $this->loc->getAllNationals();
+        $data['counties'] = $this->loc->getStates();  // Renamed from 'states' to 'counties'
+        $data['sub_counties'] = Lga::all(); // Add this line
+        $data['nationals'] = \App\Models\Nationality::all(); 
         return view('pages.support_team.students.add', $data);
     }
 

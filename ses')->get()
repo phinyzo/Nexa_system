@@ -1,0 +1,40 @@
+[90m= [39m[34;4mIlluminate\Support\Collection[39;24m {#6083
+    [34mall[39m: [
+      {#6061
+        +"[1mid[22m": [35m1[39m,
+        +"[1mname[22m": "[32mPre-Primary[39m",
+        +"[1mcode[22m": "[32mPP[39m",
+        +"[1mcreated_at[22m": [36mnull[39m,
+        +"[1mupdated_at[22m": [36mnull[39m,
+      },
+      {#6074
+        +"[1mid[22m": [35m2[39m,
+        +"[1mname[22m": "[32mPrimary[39m",
+        +"[1mcode[22m": "[32mPRI[39m",
+        +"[1mcreated_at[22m": [36mnull[39m,
+        +"[1mupdated_at[22m": [36mnull[39m,
+      },
+      {#6073
+        +"[1mid[22m": [35m3[39m,
+        +"[1mname[22m": "[32mJunior Secondary[39m",
+        +"[1mcode[22m": "[32mJSS[39m",
+        +"[1mcreated_at[22m": [36mnull[39m,
+        +"[1mupdated_at[22m": [36mnull[39m,
+      },
+      {#6072
+        +"[1mid[22m": [35m4[39m,
+        +"[1mname[22m": "[32mSenior Secondary[39m",
+        +"[1mcode[22m": "[32mSSS[39m",
+        +"[1mcreated_at[22m": [36mnull[39m,
+        +"[1mupdated_at[22m": [36mnull[39m,
+      },
+      {#6071
+        +"[1mid[22m": [35m5[39m,
+        +"[1mname[22m": "[32mTertiary[39m",
+        +"[1mcode[22m": "[32mTER[39m",
+        +"[1mcreated_at[22m": [36mnull[39m,
+        +"[1mupdated_at[22m": [36mnull[39m,
+      },
+    ],
+  }
+

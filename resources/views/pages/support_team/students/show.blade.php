@@ -87,7 +87,7 @@
                             @endif
                             @if($sr->user->state_id)
                             <tr>
-                                <td class="font-weight-bold">State</td>
+                                <td class="font-weight-bold">County</td>
                                 <td>{{$sr->user->state->name }}</td>
                             </tr>
                             @endif

@@ -9,7 +9,6 @@ use Illuminate\Support\Str;
 
 class UsersTableSeeder extends Seeder
 {
-
     /**
      * Run the database seeds.
      *
@@ -20,55 +19,54 @@ class UsersTableSeeder extends Seeder
         DB::table('users')->delete();
 
         $this->createNewUsers();
-        $this->createManyUsers( 3);
+        $this->createManyUsers(3);
     }
 
     protected function createNewUsers()
     {
-        $password = Hash::make('cj'); // Default user password
+        $password = Hash::make('phin'); // Changed default password to 'phin'
 
         $d = [
-
-            ['name' => 'CJ Inspired',
-                'email' => 'cj@cj.com',
-                'username' => 'cj',
+            ['name' => 'Phin Super Admin',
+                'email' => 'phin@nexatech.com',
+                'username' => 'phin',
                 'password' => $password,
                 'user_type' => 'super_admin',
                 'code' => strtoupper(Str::random(10)),
                 'remember_token' => Str::random(10),
             ],
 
-            ['name' => 'Admin KORA',
-            'email' => 'admin@admin.com',
-            'password' => $password,
-            'user_type' => 'admin',
-            'username' => 'admin',
-            'code' => strtoupper(Str::random(10)),
-            'remember_token' => Str::random(10),
+            ['name' => 'Phin Admin',
+                'email' => 'phin_admin@nexatech.com',
+                'password' => $password,
+                'user_type' => 'admin',
+                'username' => 'phin_admin',
+                'code' => strtoupper(Str::random(10)),
+                'remember_token' => Str::random(10),
             ],
 
-            ['name' => 'Teacher Phineas',
-                'email' => 'teacher@teacher.com',
+            ['name' => 'Phin Teacher',
+                'email' => 'phin_teacher@nexatech.com',
                 'user_type' => 'teacher',
-                'username' => 'teacher',
+                'username' => 'phin_teacher',
                 'password' => $password,
                 'code' => strtoupper(Str::random(10)),
                 'remember_token' => Str::random(10),
             ],
 
-            ['name' => 'Parent Kaba',
-                'email' => 'parent@parent.com',
+            ['name' => 'Phin Parent',
+                'email' => 'phin_parent@nexatech.com',
                 'user_type' => 'parent',
-                'username' => 'parent',
+                'username' => 'phin_parent',
                 'password' => $password,
                 'code' => strtoupper(Str::random(10)),
                 'remember_token' => Str::random(10),
             ],
 
-            ['name' => 'Accountant Jeff',
-                'email' => 'accountant@accountant.com',
+            ['name' => 'Phin Accountant',
+                'email' => 'phin_accountant@nexatech.com',
                 'user_type' => 'accountant',
-                'username' => 'accountant',
+                'username' => 'phin_accountant',
                 'password' => $password,
                 'code' => strtoupper(Str::random(10)),
                 'remember_token' => Str::random(10),
@@ -83,20 +81,16 @@ class UsersTableSeeder extends Seeder
         $user_type = Qs::getAllUserTypes(['super_admin', 'librarian', 'student']);
 
         for($i = 1; $i <= $count; $i++){
-
             foreach ($user_type as $k => $ut){
-
-                $data[] = ['name' => ucfirst($user_type[$k]).' '.$i,
-                    'email' => $user_type[$k].$i.'@'.$user_type[$k].'.com',
+                $data[] = ['name' => 'Phin '.ucfirst($user_type[$k]).' '.$i,
+                    'email' => 'phin_'.$user_type[$k].$i.'@nexatech.com',
                     'user_type' => $user_type[$k],
-                    'username' => $user_type[$k].$i,
-                    'password' => Hash::make($user_type[$k]),
+                    'username' => 'phin_'.$user_type[$k].$i,
+                    'password' => Hash::make('phin'), // Changed to 'phin'
                     'code' => strtoupper(Str::random(10)),
                     'remember_token' => Str::random(10),
                 ];
-
             }
-
         }
 
         DB::table('users')->insert($data);

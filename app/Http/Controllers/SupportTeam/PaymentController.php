@@ -215,13 +215,19 @@ class PaymentController extends Controller
 
         return is_null($pay) ? Qs::goWithDanger('payments.index') : view('pages.support_team.payments.edit', $d);
     }
-
-    public function update(PaymentUpdate $req, $id)
+    public function update(Request $request, Payment $payment)
     {
-        $data = $req->all();
-        $this->pay->update($id, $data);
-
-        return Qs::jsonUpdateOk();
+        $validated = $request->validate([
+            'title' => 'required|string|max:255',
+            'amount' => 'required|numeric|min:100', // Minimum 100 KSH
+            'method' => 'required|in:mpesa,bank,cash,cheque',
+            'description' => 'nullable|string',
+            'status' => 'required|in:active,archived'
+        ]);
+    
+        $payment->update($validated);
+        return redirect()->route('payments.index')
+               ->with('success', 'Payment updated successfully');
     }
 
     public function destroy($id)
